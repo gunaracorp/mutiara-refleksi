@@ -7,6 +7,7 @@ import { WhatsAppFloat } from "@/components/shared/whatsapp-float";
 import { JsonLd } from "@/components/shared/json-ld";
 import { localBusinessJsonLd, websiteJsonLd } from "@/lib/json-ld";
 import { site } from "@/lib/site";
+import { Analytics } from '@vercel/analytics/next';
 
 const jakarta = Plus_Jakarta_Sans({
   subsets: ["latin"],
@@ -99,6 +100,7 @@ export default function RootLayout({
         </main>
         <Footer />
         <WhatsAppFloat />
+        <Analytics />
       </body>
     </html>
   );
