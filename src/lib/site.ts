@@ -81,3 +81,28 @@ export const stats = [
   { value: 15, suffix: "", label: "Terapis Profesional" },
   { value: 98, suffix: "%", label: "Rating Kepuasan" },
 ] as const;
+
+// ============================================================
+// WhatsApp conversion helper — SEMUA CTA utama mengarah ke WA
+// ============================================================
+
+export const waNumber = site.whatsapp; // 6285162674977
+
+/** Bangun link WhatsApp dengan pesan terisi otomatis (kontekstual) */
+export function waLink(message?: string): string {
+  const base = `https://wa.me/${waNumber}`;
+  const text =
+    message ??
+    `Halo ${site.name}! Saya ingin reservasi pijat refleksi. Mohon info jadwal yang tersedia. Terima kasih.`;
+  return `${base}?text=${encodeURIComponent(text)}`;
+}
+
+/** Pesan WA untuk layanan tertentu */
+export function waServiceMessage(serviceName: string, duration?: string): string {
+  return `Halo ${site.name}! Saya ingin reservasi *${serviceName}${duration ? ` (${duration})` : ""}*. Mohon info ketersediaan jadwalnya. Terima kasih.`;
+}
+
+/** Pesan WA untuk paket tertentu */
+export function waPackageMessage(packageName: string): string {
+  return `Halo ${site.name}! Saya tertarik dengan *${packageName}*. Boleh info lebih lanjut dan cara pemesanannya? Terima kasih.`;
+}

@@ -13,7 +13,7 @@ import { testimonials } from "@/lib/data/content";
 import { blogPosts } from "@/lib/data/blog";
 import { faqJsonLd, itemListJsonLd } from "@/lib/json-ld";
 import { JsonLd } from "@/components/shared/json-ld";
-import { site } from "@/lib/site";
+import { site, waLink } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Mutiara Refleksi — Pijat Refleksi Profesional di Jakarta Timur",
@@ -158,12 +158,15 @@ export default function HomePage() {
               >
                 Lihat Peta & Kontak
               </Link>
-              <Link
-                href="/booking"
+              <a
+                href={waLink()}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="inline-flex items-center justify-center gap-2 rounded-full border border-white/30 px-7 py-3.5 font-bold text-white hover:bg-white/10 transition-all"
+                aria-label="Reservasi via WhatsApp"
               >
                 <CalendarCheck className="w-4 h-4" aria-hidden="true" /> Reservasi Dulu
-              </Link>
+              </a>
             </div>
           </Reveal>
           <Reveal delay={0.15}>

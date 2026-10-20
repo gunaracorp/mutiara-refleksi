@@ -5,11 +5,11 @@ import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
-import { ChevronDown, Clock, Menu, Phone, Sparkles, X } from "lucide-react";
+import { ChevronDown, Clock, Menu, MessageCircle, Phone, Sparkles, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
 import { cn } from "@/lib/utils";
-import { site, navLinks } from "@/lib/site";
+import { site, navLinks, waLink } from "@/lib/site";
 import { services } from "@/lib/data/services";
 
 export function Navbar() {
@@ -25,10 +25,13 @@ export function Navbar() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  useEffect(() => {
-    setServicesOpen(false);
-    setMobileOpen(false);
-  }, [pathname]);
+  // Close dropdowns when route changes (adjust state during render — React recommended pattern)
+  const [lastPath, setLastPath] = useState(pathname);
+  if (lastPath !== pathname) {
+    setLastPath(pathname);
+    if (servicesOpen) setServicesOpen(false);
+    if (mobileOpen) setMobileOpen(false);
+  }
 
   const isActive = (href: string) =>
     href === "/" ? pathname === "/" : pathname.startsWith(href);
@@ -83,7 +86,12 @@ export function Navbar() {
         <ul className="hidden lg:flex items-center gap-0.5" role="menubar">
           {navLinks.map((link) =>
             link.href === "/layanan" ? (
-              <li key={link.href} className="relative">
+              <li
+                key={link.href}
+                className="relative"
+                onMouseEnter={() => setServicesOpen(true)}
+                onMouseLeave={() => setServicesOpen(false)}
+              >
                 <button
                   className={cn(
                     "px-3 py-2 rounded-full text-sm font-medium flex items-center gap-1 transition-colors",
@@ -95,8 +103,11 @@ export function Navbar() {
                   )}
                   aria-expanded={servicesOpen}
                   aria-haspopup="true"
-                  onClick={() => setServicesOpen((v) => !v)}
-                  onMouseEnter={() => setServicesOpen(true)}
+                  onClick={() => setServicesOpen(true)}
+                  onKeyDown={(e) => {
+                    if (e.key === "Escape") setServicesOpen(false);
+                    if (e.key === "Enter" || e.key === " ") setServicesOpen(true);
+                  }}
                   role="menuitem"
                 >
                   {link.label}
@@ -111,7 +122,6 @@ export function Navbar() {
                       exit={{ opacity: 0, y: 8, scale: 0.98 }}
                       transition={{ duration: 0.22, ease: [0.22, 1, 0.36, 1] }}
                       className="absolute left-1/2 -translate-x-1/2 top-full pt-3"
-                      onMouseLeave={() => setServicesOpen(false)}
                     >
                       <div className="w-[560px] rounded-2xl bg-white shadow-2xl border border-emerald-900/10 p-3 grid grid-cols-2 gap-1">
                         {services.map((s) => (
@@ -175,20 +185,21 @@ export function Navbar() {
             <Phone className="w-4 h-4" />
             {site.phoneDisplay}
           </a>
-          <Button
-            asChild
+          <a
+            href={waLink()}
+            target="_blank"
+            rel="noopener noreferrer"
             className={cn(
-              "hidden sm:inline-flex rounded-full font-semibold shadow-lg transition-all hover:shadow-xl hover:-translate-y-0.5",
+              "hidden sm:inline-flex rounded-full font-semibold shadow-lg transition-all hover:shadow-xl hover:-translate-y-0.5 px-4 py-2 text-sm items-center gap-2",
               scrolled
-                ? "bg-emerald-800 hover:bg-emerald-900"
+                ? "bg-emerald-800 hover:bg-emerald-900 text-white"
                 : "bg-red-600 hover:bg-red-700 text-white"
             )}
+            aria-label="Reservasi via WhatsApp"
           >
-            <Link href="/booking">
-              <Sparkles className="w-4 h-4" />
-              Reservasi
-            </Link>
-          </Button>
+            <MessageCircle className="w-4 h-4" aria-hidden="true" />
+            Reservasi
+          </a>
 
           {/* Mobile sheet */}
           <Sheet open={mobileOpen} onOpenChange={setMobileOpen}>
@@ -241,7 +252,21 @@ export function Navbar() {
                     <Phone className="w-4 h-4 text-[#c9a227]" /> {site.phoneDisplay}
                   </p>
                   <Button asChild className="w-full rounded-full bg-red-600 hover:bg-red-700 font-semibold">
-                    <Link href="/booking">Reservasi Sekarang</Link>
+                    <a
+                      href={waLink()}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label="Reservasi Sekarang via WhatsApp"
+                    >
+                      Reservasi via WhatsApp
+                    </a>
+                  </Button>
+                  <Button
+                    asChild
+                    variant="outline"
+                    className="w-full rounded-full border-white/30 bg-white/10 text-white hover:bg-white hover:text-emerald-950 font-semibold"
+                  >
+                    <Link href="/booking">Isi Form Online</Link>
                   </Button>
                 </div>
               </div>

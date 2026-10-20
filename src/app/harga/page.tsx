@@ -3,7 +3,7 @@
 // ============================================================
 import type { Metadata } from "next";
 import Link from "next/link";
-import { ArrowRight, BadgePercent, CalendarCheck, Check, Clock, CreditCard, Info, Star } from "lucide-react";
+import { ArrowRight, BadgePercent, Check, Clock, CreditCard, Info, MessageCircle, Star } from "lucide-react";
 import { PageHero } from "@/components/shared/page-hero";
 import { SectionHeading } from "@/components/shared/section-heading";
 import { CtaBanner } from "@/components/shared/cta-banner";
@@ -13,7 +13,7 @@ import { Reveal, Stagger, StaggerItem } from "@/components/animation/reveal";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { packages, formatRupiah, services } from "@/lib/data/services";
-import { site } from "@/lib/site";
+import { site, waLink, waServiceMessage, waPackageMessage } from "@/lib/site";
 import { breadcrumbJsonLd } from "@/lib/json-ld";
 
 export const metadata: Metadata = {
@@ -170,10 +170,15 @@ export default function HargaPage() {
                     asChild
                     className="w-full rounded-full bg-red-600 font-bold text-white hover:bg-red-700 h-11 shadow-lg shadow-red-900/20 hover:-translate-y-0.5 transition-all"
                   >
-                    <Link href={`/booking?layanan=${s.slug}`} aria-label={`Reservasi ${s.name}`}>
-                      <CalendarCheck className="w-4 h-4" aria-hidden="true" />
-                      Reservasi Layanan Ini
-                    </Link>
+                    <a
+                      href={waLink(waServiceMessage(s.name, s.durationOptions[0]?.duration))}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label={`Reservasi ${s.name} via WhatsApp`}
+                    >
+                      <MessageCircle className="w-4 h-4" aria-hidden="true" />
+                      Reservasi via WhatsApp
+                    </a>
                   </Button>
                   <Link
                     href={`/layanan/${s.slug}`}
@@ -245,17 +250,17 @@ export default function HargaPage() {
                   <div className="mt-auto pt-6">
                     <Button
                       asChild
-                      variant={highlight ? "default" : "outline"}
-                      className={`w-full rounded-full font-bold h-11 transition-all hover:-translate-y-0.5 ${
-                        highlight
-                          ? "bg-red-600 font-bold text-white hover:bg-red-700 shadow-lg shadow-red-900/20"
-                          : "border-emerald-800 text-emerald-900 hover:bg-emerald-800 hover:text-white"
-                      }`}
+                      className="w-full rounded-full bg-red-600 hover:bg-red-700 text-white font-bold h-11 shadow-lg shadow-red-900/20 transition-all hover:-translate-y-0.5"
                     >
-                      <Link href="/booking" aria-label={`Pesan ${p.name}`}>
-                        <CalendarCheck className="w-4 h-4" aria-hidden="true" />
-                        Pesan Paket Ini
-                      </Link>
+                      <a
+                        href={waLink(waPackageMessage(p.name))}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label={`Pesan ${p.name} via WhatsApp`}
+                      >
+                        <MessageCircle className="w-4 h-4" aria-hidden="true" />
+                        Pesan Paket via WhatsApp
+                      </a>
                     </Button>
                   </div>
                 </StaggerItem>

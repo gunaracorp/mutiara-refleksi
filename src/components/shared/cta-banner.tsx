@@ -4,7 +4,7 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import { ArrowRight, CalendarCheck, MessageCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { site } from "@/lib/site";
+import { site, waLink } from "@/lib/site";
 import { FloatingPearls } from "@/components/animation/reveal";
 
 export function CtaBanner({
@@ -56,10 +56,15 @@ export function CtaBanner({
             size="lg"
             className="rounded-full bg-red-600 hover:bg-red-700 text-white font-bold px-8 h-13 shadow-xl shadow-red-900/30 hover:-translate-y-0.5 transition-all"
           >
-            <Link href="/booking">
-              <CalendarCheck className="w-5 h-5" />
-              Reservasi Online
-            </Link>
+            <a
+              href={waLink()}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Reservasi via WhatsApp"
+            >
+              <MessageCircle className="w-5 h-5" />
+              Reservasi via WhatsApp
+            </a>
           </Button>
           <Button
             asChild
@@ -67,14 +72,10 @@ export function CtaBanner({
             variant="outline"
             className="rounded-full border-white/40 bg-white/10 backdrop-blur text-white hover:bg-white hover:text-emerald-950 font-bold px-8 h-13 transition-all"
           >
-            <a
-              href={`https://wa.me/${site.whatsapp}?text=${encodeURIComponent("Halo Mutiara Refleksi, saya ingin reservasi.")}`}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <MessageCircle className="w-5 h-5" />
-              Chat WhatsApp
-            </a>
+            <Link href="/booking">
+              <CalendarCheck className="w-5 h-5" />
+              Isi Form Online
+            </Link>
           </Button>
         </motion.div>
         <motion.p

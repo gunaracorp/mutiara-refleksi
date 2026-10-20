@@ -6,9 +6,9 @@ import {
   ArrowRight,
   ArrowUpRight,
   CalendarDays,
-  CalendarCheck,
   CheckCircle2,
   Clock3,
+  MessageCircle,
   Sparkles,
 } from "lucide-react";
 import { PageHero } from "@/components/shared/page-hero";
@@ -19,7 +19,7 @@ import { Reveal, FloatingPearls } from "@/components/animation/reveal";
 import { Button } from "@/components/ui/button";
 import { blogPosts, getPost } from "@/lib/data/blog";
 import { articleJsonLd, breadcrumbJsonLd } from "@/lib/json-ld";
-import { site } from "@/lib/site";
+import { site, waLink } from "@/lib/site";
 
 interface PageProps {
   params: Promise<{ slug: string }>;
@@ -226,10 +226,15 @@ export default async function BlogArticlePage({ params }: PageProps) {
                 size="lg"
                 className="relative mt-7 h-13 rounded-full bg-red-600 px-8 font-bold text-white shadow-xl shadow-red-900/30 transition-all hover:-translate-y-0.5 hover:bg-red-700"
               >
-                <Link href="/booking">
-                  <CalendarCheck className="w-5 h-5" aria-hidden="true" />
-                  Reservasi Online
-                </Link>
+                <a
+                  href={waLink(`Halo ${site.name}! Saya baru membaca artikel "${post.title}" dan ingin reservasi sesuai rekomendasi di dalamnya.`)}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Reservasi via WhatsApp"
+                >
+                  <MessageCircle className="w-5 h-5" aria-hidden="true" />
+                  Reservasi via WhatsApp
+                </a>
               </Button>
             </section>
           </Reveal>

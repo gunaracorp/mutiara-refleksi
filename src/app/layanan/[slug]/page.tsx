@@ -32,7 +32,7 @@ import {
 } from "@/components/ui/accordion";
 import { getService, services } from "@/lib/data/services";
 import { serviceJsonLd, breadcrumbJsonLd } from "@/lib/json-ld";
-import { site } from "@/lib/site";
+import { site, waLink, waServiceMessage } from "@/lib/site";
 
 interface ServicePageProps {
   params: Promise<{ slug: string }>;
@@ -80,8 +80,8 @@ export default async function ServiceDetailPage({ params }: ServicePageProps) {
   if (!service) notFound();
 
   const related = services.filter((s) => s.slug !== slug).slice(0, 3);
-  const waMessage = encodeURIComponent(
-    `Halo ${site.name}, saya ingin bertanya / reservasi layanan ${service.name}.`
+  const waHref = waLink(
+    waServiceMessage(service.name, service.durationOptions[0]?.duration)
   );
 
   // FAQ JSON-LD khusus layanan ini
@@ -224,10 +224,15 @@ export default async function ServiceDetailPage({ params }: ServicePageProps) {
                   size="lg"
                   className="w-full rounded-full bg-red-600 hover:bg-red-700 text-white font-bold h-12 shadow-xl shadow-red-900/25 hover:-translate-y-0.5 transition-all"
                 >
-                  <Link href={`/booking?layanan=${service.slug}`}>
-                    <CalendarCheck className="w-5 h-5" aria-hidden="true" />
-                    Reservasi Layanan Ini
-                  </Link>
+                  <a
+                    href={waHref}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={`Reservasi ${service.name} via WhatsApp`}
+                  >
+                    <MessageCircle className="w-5 h-5" aria-hidden="true" />
+                    Reservasi via WhatsApp
+                  </a>
                 </Button>
                 <Button
                   asChild
@@ -235,14 +240,10 @@ export default async function ServiceDetailPage({ params }: ServicePageProps) {
                   variant="outline"
                   className="w-full rounded-full border-emerald-800/25 bg-transparent text-emerald-900 hover:bg-emerald-800/5 font-bold h-12 transition-all"
                 >
-                  <a
-                    href={`https://wa.me/${site.whatsapp}?text=${waMessage}`}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <MessageCircle className="w-5 h-5" aria-hidden="true" />
-                    Tanya via WhatsApp
-                  </a>
+                  <Link href={`/booking?layanan=${service.slug}`} aria-label={`Isi form reservasi ${service.name}`}>
+                    <CalendarCheck className="w-5 h-5" aria-hidden="true" />
+                    Isi Form Online
+                  </Link>
                 </Button>
               </div>
 

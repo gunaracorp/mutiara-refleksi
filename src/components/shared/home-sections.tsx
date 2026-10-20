@@ -19,9 +19,8 @@ import {
   Users,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { site } from "@/lib/site";
+import { site, stats, waLink } from "@/lib/site";
 import { AnimatedWords, FloatingPearls, CountUp } from "@/components/animation/reveal";
-import { stats } from "@/lib/site";
 
 export function Hero() {
   return (
@@ -77,16 +76,16 @@ export function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.9 }}
           >
-            <Button
-              asChild
-              size="lg"
-              className="rounded-full bg-red-600 hover:bg-red-700 text-white font-bold px-8 h-13 shadow-xl shadow-red-950/40 hover:-translate-y-0.5 transition-all"
+            <a
+              href={waLink()}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 rounded-full bg-red-600 hover:bg-red-700 text-white font-bold px-8 h-13 shadow-xl shadow-red-950/40 hover:-translate-y-0.5 transition-all"
+              aria-label="Reservasi via WhatsApp"
             >
-              <Link href="/booking">
-                <CalendarCheck className="w-5 h-5" />
-                Reservasi Sekarang
-              </Link>
-            </Button>
+              <MessageCircle className="w-5 h-5" />
+              Reservasi via WhatsApp
+            </a>
             <Button
               asChild
               size="lg"
@@ -160,21 +159,26 @@ export function Hero() {
                 </div>
               </div>
 
-              <Button asChild className="mt-7 w-full rounded-full bg-emerald-800 hover:bg-emerald-900 h-12 font-bold shadow-lg">
-                <Link href="/booking">
-                  <CalendarCheck className="w-5 h-5" />
-                  Booking Sekarang
-                </Link>
-              </Button>
               <a
-                href={`https://wa.me/${site.whatsapp}?text=${encodeURIComponent("Halo Mutiara Refleksi, saya ingin bertanya.")}`}
+                href={waLink()}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="mt-3 flex items-center justify-center gap-2 w-full rounded-full border border-emerald-800/25 h-12 font-semibold text-emerald-900 hover:bg-emerald-50 transition-colors"
+                className="mt-7 flex items-center justify-center gap-2 w-full rounded-full bg-red-600 hover:bg-red-700 h-12 font-bold text-white shadow-lg shadow-red-900/25 transition-all"
+                aria-label="Booking via WhatsApp"
               >
                 <MessageCircle className="w-5 h-5" />
-                Chat WhatsApp
+                Booking via WhatsApp
               </a>
+              <Button
+                asChild
+                variant="outline"
+                className="mt-3 w-full rounded-full border-emerald-800/25 h-12 font-semibold text-emerald-900 hover:bg-emerald-50"
+              >
+                <Link href="/booking">
+                  <CalendarCheck className="w-5 h-5" />
+                  Isi Form Online
+                </Link>
+              </Button>
             </div>
           </div>
         </motion.div>

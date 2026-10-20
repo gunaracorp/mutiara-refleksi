@@ -3,7 +3,7 @@
 // ============================================================
 import type { Metadata } from "next";
 import Link from "next/link";
-import { ArrowRight, CalendarCheck, Compass, MessageCircle } from "lucide-react";
+import { ArrowRight, Compass, MessageCircle } from "lucide-react";
 import { PageHero } from "@/components/shared/page-hero";
 import { SectionHeading } from "@/components/shared/section-heading";
 import { ServiceCard } from "@/components/shared/service-card";
@@ -12,7 +12,7 @@ import { JsonLd } from "@/components/shared/json-ld";
 import { Reveal, Stagger, StaggerItem } from "@/components/animation/reveal";
 import { Button } from "@/components/ui/button";
 import { services } from "@/lib/data/services";
-import { site } from "@/lib/site";
+import { site, waLink } from "@/lib/site";
 import { breadcrumbJsonLd } from "@/lib/json-ld";
 
 export const metadata: Metadata = {
@@ -167,10 +167,15 @@ export default function LayananPage() {
                       size="lg"
                       className="rounded-full bg-red-600 hover:bg-red-700 text-white font-bold px-7 shadow-xl shadow-red-900/30 hover:-translate-y-0.5 transition-all"
                     >
-                      <Link href="/booking">
-                        <CalendarCheck className="w-5 h-5" aria-hidden="true" />
-                        Reservasi Sekarang
-                      </Link>
+                      <a
+                        href={waLink()}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="Reservasi via WhatsApp"
+                      >
+                        <MessageCircle className="w-5 h-5" aria-hidden="true" />
+                        Reservasi via WhatsApp
+                      </a>
                     </Button>
                     <Button
                       asChild
