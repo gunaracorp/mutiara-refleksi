@@ -1,0 +1,542 @@
+     1→// ============================================================
+     2→// MUTIARA REFLEKSI - Blog Data (10 artikel SEO)
+     3→// ============================================================
+     4→
+     5→export interface BlogPost {
+     6→  slug: string;
+     7→  title: string;
+     8→  excerpt: string;
+     9→  category: string;
+    10→  date: string;
+    11→  readTime: number;
+    12→  image: string;
+    13→  keywords: string[];
+    14→  content: { heading: string; paragraphs: string[]; list?: string[] }[];
+    15→  conclusion: string;
+    16→}
+    17→
+    18→export const blogCategories = ["Manfaat", "Tips Kesehatan", "Edukasi", "Panduan", "Kehamilan"];
+    19→
+    20→export const blogPosts: BlogPost[] = [
+    21→  {
+    22→    slug: "manfaat-pijat-refleksi-untuk-kesehatan-tubuh",
+    23→    title: "10 Manfaat Pijat Refleksi untuk Kesehatan Tubuh yang Jarang Diketahui",
+    24→    excerpt:
+    25→      "Pijat refleksi bukan sekadar pijat kaki biasa. Kenali 10 manfaat luar biasa pijat refleksi bagi kesehatan tubuh — dari melancarkan sirkulasi darah hingga meningkatkan imunitas.",
+    26→    category: "Manfaat",
+    27→    date: "2025-01-06",
+    28→    readTime: 7,
+    29→    image: "/images/service-refleksi-kaki.jpg",
+    30→    keywords: ["manfaat pijat refleksi", "pijat refleksi untuk kesehatan", "terapi refleksi"],
+    31→    content: [
+    32→      {
+    33→        heading: "Apa Itu Pijat Refleksi?",
+    34→        paragraphs: [
+    35→          "Pijat refleksi adalah teknik terapi yang dilakukan dengan memberikan tekanan pada titik-titik tertentu di telapak kaki, tangan, atau tubuh yang dipercaya terhubung dengan organ-organ dalam. Prinsip dasarnya, setiap zona refleksi pada kaki mewakili organ tubuh tertentu — ibu jari kaki mewakili kepala dan otak, bagian tengah telapak mewakili organ perut, dan tumit mewakili panggul.",
+    36→          "Di Indonesia, pijat refleksi telah menjadi bagian dari budaya kesehatan masyarakat. Teknik ini populer karena tidak memerlukan obat-obatan, aman untuk hampir semua usia, dan memberikan efek relaksasi yang mendalam sejak sesi pertama.",
+    37→        ],
+    38→      },
+    39→      {
+    40→        heading: "1. Melancarkan Sirkulasi Darah",
+    41→        paragraphs: [
+    42→          "Tekanan terarah pada titik refleksi membantu mengaktifkan aliran darah ke jaringan yang selama ini kurang tersentuh sirkulasi optimal. Sirkulasi yang lancar berarti setiap sel tubuh mendapatkan oksigen dan nutrisi lebih baik, sekaligus limbah metabolisme lebih cepat terbuang.",
+    43→          "Penelitian menunjukkan bahwa pijat refleksi dapat meningkatkan aliran darah ke ginjal dan usus, organ penting dalam sistem detoksifikasi tubuh.",
+    44→        ],
+    45→      },
+    46→      {
+    47→        heading: "2. Mengurangi Stres dan Kecemasan",
+    48→        paragraphs: [
+    49→          "Saat titik refleksi ditekan, tubuh melepaskan endorfin — hormon bahagia alami — sekaligus menurunkan hormon stres kortisol. Inilah sebabnya banyak orang tertidur nyenyak di kursi refleksi.",
+    50→          "Satu sesi pijat refleksi 60 menit setara dengan 'reset' mental: pikiran menjadi jernih, emosi lebih stabil, dan tubuh terasa ringan kembali.",
+    51→        ],
+    52→      },
+    53→      {
+    54→        heading: "3. Meningkatkan Kualitas Tidur",
+    55→        paragraphs: ["Bagi penderita insomnia ringan, pijat refleksi membantu tubuh memasuki kondisi relaksasi parasympatik — kondisi alami tubuh untuk tidur. Teknik pijatan pada titik-titik keseimbangan membantu mengatur ritme sirkadian secara alami."],
+    56→      },
+    57→      {
+    58→        heading: "4-10: Manfaat Lainnya dalam Daftar Lengkap",
+    59→        paragraphs: ["Selain tiga manfaat utama di atas, pijat refleksi secara rutin juga memberikan manfaat berikut:"],
+    60→        list: [
+    61→          "Meredakan nyeri kepala dan migrain",
+    62→          "Membantu pencernaan lebih lancar",
+    63→          "Meredakan pegal-pegal dan nyeri sendi",
+    64→          "Meningkatkan energi dan vitalitas harian",
+    65→          "Mendukung sistem imun tubuh",
+    66→          "Membantu mengurangi bengkak pada kaki",
+    67→          "Memperbaiki suasana hati dan fokus kerja",
+    68→        ],
+    69→      },
+    70→      {
+    71→        heading: "Berapa Sering Sebaiknya Pijat Refleksi?",
+    72→        paragraphs: [
+    73→          "Untuk pemeliharaan kesehatan umum, satu hingga dua kali per minggu adalah ideal. Untuk keluhan tertentu seperti insomnia atau nyeri kronis, konsultasikan dengan terapis Anda untuk jadwal terapi yang lebih intensif.",
+    74→          "Di Mutiara Refleksi Jakarta Timur, terapis kami akan membantu menyusun jadwal terapi yang sesuai dengan kondisi dan target kesehatan Anda.",
+    75→        ],
+    76→      },
+    77→    ],
+    78→    conclusion:
+    79→      "Pijat refleksi adalah investasi kesehatan yang terjangkau dengan manfaat jangka panjang. Rasakan sendiri manfaatnya — reservasi sesi refleksi Anda di Mutiara Refleksi sekarang.",
+    80→  },
+    81→  {
+    82→    slug: "titik-titik-refleksi-pada-kaki-dan-fungsinya",
+    83→    title: "Peta Titik Refleksi pada Kaki dan Fungsinya untuk Setiap Organ",
+    84→    excerpt:
+    85→      "Telapak kaki Anda menyimpan 'peta' kesehatan seluruh tubuh. Pelajari zona-zona refleksi kaki, organ yang terwakili, dan cara membacanya.",
+    86→    category: "Edukasi",
+    87→    date: "2025-01-13",
+    88→    readTime: 8,
+    89→    image: "/images/blog-titik-refleksi.jpg",
+    90→    keywords: ["titik refleksi kaki", "peta refleksi", "zona refleksi kaki"],
+    91→    content: [
+    92→      {
+    93→        heading: "Konsep Dasar Zona Terapi",
+    94→        paragraphs: [
+    95→          "Teori refleksi membagi tubuh menjadi 10 zona vertikal, lima di setiap sisi. Setiap titik di telapak kaki sesuai dengan organ yang berada di zona yang sama. Ketika ada gangguan pada organ tertentu, titik refleksinya sering terasa nyeri atau berdebu saat ditekan.",
+    96→          "Terapis refleksi berpengalaman dapat 'membaca' kondisi tubuh pelanggan hanya dari sensitivitas titik-titik refleksi — inilah yang membuat setiap sesi refleksi terasa personal.",
+    97→        ],
+    98→      },
+    99→      {
+   100→        heading: "Zona Depan: Ibu Jari hingga Pangkal Jari",
+   101→        paragraphs: [
+   102→          "Ibu jari kaki adalah area refleksi kepala, otak, sinus, dan leher. Tekanan pada bagian ini sering membantu meredakan sakit kepala dan hidung tersumbat. Pangkal jari-jari kaki mewakili mata dan telinga.",
+   103→          "Banyak pekerja yang menatap layar seharian merasakan nyeri ringan di area ini — sinyal bahwa mata mereka kelelahan.",
+   104→        ],
+   105→      },
+   106→      {
+   107→        heading: "Zona Tengah: Bola Kaki hingga Lengkung",
+   108→        paragraphs: ["Bola kaki (pangkal telapak) mewakili dada, paru-paru, dan bahu. Lengkung kaki tengah adalah wilayah organ penting: lambung di sisi kiri kaki, hati dan kantong empedu di sisi kanan, ginjal serta pankreas di tengah."],
+   109→      },
+   110→      {
+   111→        heading: "Zona Tumit dan Pergelangan",
+   112→        paragraphs: ["Tumit mewakili organ panggul: usus besar dan kecil menempati tepi dalam telapak, sementara kandung kemih serta saluran reproduksi berada di area tumit dan pergelangan dalam."],
+   113→      },
+   114→      {
+   115→        heading: "Tanda-Tanda Tubuh Anda Butuh Refleksi",
+   116→        paragraphs: ["Perhatikan sinyal-sinyal kecil berikut dari tubuh Anda:"],
+   117→        list: [
+   118→          "Titik refleksi terasa nyeri atau benjol saat ditekan",
+   119→          "Sering pegal-pegal tanpa penyebab jelas",
+   120→          "Tubuh terasa lelah meski cukup tidur",
+   121→          "Pencernaan tidak lancar",
+   122→          "Sering sakit kepala di sore hari",
+   123→          "Tidur tidak nyenyak",
+   124→        ],
+   125→      },
+   126→      {
+   127→        heading: "Coba Sendiri atau Serahkan ke Ahlinya?",
+   128→        paragraphs: [
+   129→          "Meski Anda bisa melakukan pijatan ringan sendiri di rumah, terapi optimal memerlukan pengetahuan tekanan, durasi, dan urutan zona yang benar. Tekanan yang salah justru bisa membuat otot semakin tegang.",
+   130→          "Terapis Mutiara Refleksi terlatih membaca peta refleksi secara akurat dan menyesuaikan tekanan dengan kondisi tubuh Anda. Datang dan rasakan bedanya.",
+   131→        ],
+   132→      },
+   133→    ],
+   134→    conclusion:
+   135→      "Memahami peta refleksi kaki adalah langkah pertama mengenal tubuh Anda lebih dalam. Serahkan pembacaan detailnya kepada terapis profesional kami — reservasi sekarang.",
+   136→  },
+   137→  {
+   138→    slug: "cara-meredakan-stres-dengan-pijat-refleksi",
+   139→    title: "Cara Meredakan Stres dengan Pijat Refleksi: Panduan Lengkap",
+   140→    excerpt:
+   141→      "Stres menumpuk karena pekerjaan? Temukan bagaimana pijat refleksi bekerja mengurangi hormon stres, plus teknik sederhana yang bisa Anda lakukan di rumah.",
+   142→    category: "Tips Kesehatan",
+   143→    date: "2025-01-20",
+   144→    readTime: 6,
+   145→    image: "/images/blog-stres.jpg",
+   146→    keywords: ["cara meredakan stres", "pijat refleksi untuk stres", "terapi stres alami"],
+   147→    content: [
+   148→      {
+   149→        heading: "Stres: Musuh Senyap Kesehatan Modern",
+   150→        paragraphs: [
+   151→          "Stres kronis terbukti menjadi pemicu berbagai masalah kesehatan: tekanan darah tinggi, gangguan pencernaan, insomnia, hingga menurunnya imunitas. Di tengah hiruk-pikuk Jakarta, hampir semua orang mengalami tekanan mental harian yang jarang dikelola dengan benar.",
+   152→          "Kabar baiknya, Anda tidak selalu membutuhkan liburan mahal untuk memulihkan diri. Terapi sentuhan seperti pijat refleksi terbukti secara ilmiah menurunkan hormon stres dalam hitungan menit.",
+   153→        ],
+   154→      },
+   155→      {
+   156→        heading: "Bagaimana Pijat Refleksi Meredakan Stres?",
+   157→        paragraphs: [
+   158→          "Saat titik-titik refleksi ditekan dengan benar, tubuh merespons dengan tiga mekanisme: pertama, pelepasan endorfin dan serotonin sebagai penenang alami; kedua, penurunan kortisol (hormon stres); ketiga, aktivasi sistem saraf parasimpatis — mode 'istirahat dan pemulihan' tubuh.",
+   159→          "Kombinasi ini menghasilkan rasa tenang mendalam yang sulit didapat hanya dengan berlibur atau scrolling media sosial.",
+   160→        ],
+   161→      },
+   162→      {
+   163→        heading: "Titik Refleksi Anti-Stres yang Bisa Anda Coba di Rumah",
+   164→        paragraphs: ["Sebelum sesi profesional, coba tekan titik-titik berikut saat stres menyerang:"],
+   165→        list: [
+   166→          "Titik solar plexus — lengkung di bawah ibu jari kaki: tekan lembut 30 detik sambil menarik napas dalam",
+   167→          "Titik kepala — ujung ibu jari kaki: pijat memutar searah jarum jam 1 menit",
+   168→          "Titik ginjal — tengah telapak kaki: tekan perlahan untuk menyeimbangkan energi",
+   169→          "Pelipis dan titik antara alis — pijat memutar untuk kejernihan pikiran",
+   170→        ],
+   171→      },
+   172→      {
+   173→        heading: "Membangun Rutinitas Anti-Stres Mingguan",
+   174→        paragraphs: [
+   175→          "Kami merekomendasikan kombinasi: satu sesi refleksi profesional per minggu, dilengkapi pijatan mandiri 10 menit setiap malam sebelum tidur. Banyak pelanggan kami melaporkan tidur lebih nyenyak dan mood lebih stabil dalam 2 minggu pertama.",
+   176→          "Paket Hemat Pagi kami (Rp 60.000) dirancang agar rutinitas kesehatan ini tetap ramah di kantong.",
+   177→        ],
+   178→      },
+   179→    ],
+   180→    conclusion:
+   181→      "Stres tidak akan hilang sendiri — kelola sebelum mengelola Anda. Jadwalkan sesi relaksasi mingguan di Mutiara Refleksi dan rasakan perbedaannya.",
+   182→  },
+   183→  {
+   184→    slug: "pijat-refleksi-ibu-hamil-aman-atau-tidak",
+   185→    title: "Pijat Refleksi untuk Ibu Hamil: Aman atau Tidak?",
+   186→    excerpt:
+   187→      "Banyak ibu hamil ragu apakah boleh dipijat. Inilah penjelasan lengkap mengenai keamanan pijat refleksi selama kehamilan, trimester yang tepat, dan teknik yang aman.",
+   188→    category: "Kehamilan",
+   189→    date: "2025-01-27",
+   190→    readTime: 7,
+   191→    image: "/images/service-ibu-hamil.jpg",
+   192→    keywords: ["pijat ibu hamil", "pijat refleksi ibu hamil", "pijat prenatal jakarta"],
+   193→    content: [
+   194→      {
+   195→        heading: "Pertanyaan yang Sering Diajukan Ibu Hamil",
+   196→        paragraphs: [
+   197→          "“Aku hamil 5 bulan, bolehkah dipijat refleksi?” Ini salah satu pertanyaan paling sering kami terima. Jawabannya: ya, aman — dengan syarat dilakukan oleh terapis yang terlatih teknik prenatal dan pada waktu kehamilan yang tepat.",
+   198→          "Kehamilan mengubah banyak hal pada tubuh ibu: pusat gravitasi bergeser menyebabkan nyeri punggung, volume darah meningkat menyebabkan kaki bengkak, dan hormon membuat tidur tidak nyaman. Pijat prenatal yang benar justru membantu mengatasi semua keluhan ini.",
+   199→        ],
+   200→      },
+   201→      {
+   202→        heading: "Kapan Waktu yang Aman?",
+   203→        paragraphs: [
+   204→          "Trimester pertama (0–12 minggu) adalah masa pengembangan organ janin yang paling krusial. Umumnya, terapis menyarankan menunggu hingga memasuki trimester kedua sebelum melakukan terapi pijat apa pun.",
+   205→          "Dari trimester kedua hingga menjelang persalinan, pijat prenatal justru sangat dianjurkan untuk kenyamanan ibu — dengan penyesuaian posisi dan intensitas.",
+   206→        ],
+   207→      },
+   208→      {
+   209→        heading: "Titik yang Harus Dihindari dan Cara Aman Kami",
+   210→        paragraphs: ["Protokol pijat ibu hamil di Mutiara Refleksi mengikuti kaidah keamanan berikut:"],
+   211→        list: [
+   212→          "Menghindari titik akupresur kontraindikasi (antara tumit dan mata kaki, area sakrum dalam)",
+   213→          "Posisi menyamping dengan bantal penyangga — tidak pernah telentang dalam waktu lama",
+   214→          "Tekanan lembut hingga sedang, tanpa deep tissue pada area sensitif",
+   215→          "Tidak menggunakan minyak esensial tertentu yang tidak dianjurkan untuk kehamilan",
+   216→          "Durasi 60 menit dengan jeda komunikasi kenyamanan",
+   217→        ],
+   218→      },
+   219→      {
+   220→        heading: "Manfaat yang Dirasakan Ibu Hamil",
+   221→        paragraphs: ["Ibu-ibu yang rutin pijat prenatal di gerai kami melaporkan manfaat berikut:"],
+   222→        list: [
+   223→          "Nyeri punggung dan pinggul berkurang signifikan",
+   224→          "Bengkak kaki membaik karena sirkulasi lebih lancar",
+   225→          "Lebih mudah tidur di trimester akhir",
+   226→          "Kram kaki malam hari berkurang",
+   227→          "Suasana hati lebih stabil",
+   228→        ],
+   229→      },
+   230→      {
+   231→        heading: "Kapan Harus Konsultasi Dokter Dulu?",
+   232→        paragraphs: [
+   233→          "Meski aman, ada kondisi yang memerlukan izin dokter kandungan terlebih dahulu: kehamilan berisiko tinggi, riwayat persalinan prematur, plasenta previa, tekanan darah tinggi, atau diabetes gestasional. Selalu informasikan kondisi kehamilan Anda kepada terapis sebelum sesi.",
+   234→        ],
+   235→      },
+   236→    ],
+   237→    conclusion:
+   238→      "Kehamilan Anda layak mendapatkan sentuhan terbaik. Layanan Pijat Ibu Hamil kami dirancang khusus untuk keamanan dan kenyamanan ibu — reservasi sekarang.",
+   239→  },
+   240→  {
+   241→    slug: "perbedaan-pijat-refleksi-dan-pijat-terapi",
+   242→    title: "Perbedaan Pijat Refleksi dan Pijat Terapi: Mana yang Cocok untuk Anda?",
+   243→    excerpt:
+   244→      "Bingung memilih pijat refleksi atau pijat terapi? Kenali perbedaan teknik, target, dan manfaat keduanya agar Anda tidak salah pilih layanan.",
+   245→    category: "Edukasi",
+   246→    date: "2025-02-03",
+   247→    readTime: 6,
+   248→    image: "/images/service-terapi.jpg",
+   249→    keywords: ["perbedaan pijat refleksi dan terapi", "pijat terapi", "jenis pijat"],
+   250→    content: [
+   251→      {
+   252→        heading: "Dua Nama yang Sering Tertukar",
+   253→        paragraphs: [
+   254→          "Banyak orang mengira pijat refleksi dan pijat terapi adalah hal yang sama. Faktanya, keduanya memiliki tujuan, teknik, dan area kerja yang berbeda. Memahami perbedaannya membantu Anda memilih terapi yang tepat sesuai keluhan.",
+   255→        ],
+   256→      },
+   257→      {
+   258→        heading: "Pijat Refleksi: Terapi dari Kaki ke Seluruh Tubuh",
+   259→        paragraphs: [
+   260→          "Pijat refleksi bekerja pada prinsip zona terapi — tekanan di telapak kaki merangsang organ-organ terkait. Targetnya bukan otot, melainkan sistem organ dan keseimbangan energi tubuh. Tekanannya terpusat pada titik-titik refleksi dengan durasi singkat per titik.",
+   261→          "Refleksi paling cocok untuk: kelelahan umum, gangguan tidur, pencernaan tidak lancar, detoksifikasi, dan pemeliharaan kesehatan rutin.",
+   262→        ],
+   263→      },
+   264→      {
+   265→        heading: "Pijat Terapi: Menyasar Otot dan Nyeri Langsung",
+   266→        paragraphs: [
+   267→          "Pijat terapi (sering disebut deep tissue atau terapeutik) bekerja langsung pada otot, fasia, dan simpul ketegangan. Terapis memetakan area nyeri, lalu bekerja berlapis melepas ketegangan dari otot permukaan hingga otot dalam.",
+   268→          "Pijat terapi paling cocok untuk: nyeri punggung kronis, leher kaku, cedera olahraga, postur kerja buruk, dan pemulihan setelah aktivitas fisik berat.",
+   269→        ],
+   270→      },
+   271→      {
+   272→        heading: "Tabel Perbandingan Cepat",
+   273→        paragraphs: ["Ringkasan perbedaan keduanya:"],
+   274→        list: [
+   275→          "Area kerja: refleksi = titik telapak kaki; terapi = otot seluruh tubuh",
+   276→          "Target: refleksi = organ dalam & energi; terapi = otot & sendi",
+   277→          "Teknik: refleksi = tekanan titik; terapi = usapan, tekanan berlapis, stretching",
+   278→          "Sensasi: refleksi = nyeri titik singkat; terapi = nyeri otot terkonsentrasi",
+   279→          "Hasil: refleksi = tubuh seimbang & segar; terapi = nyeri hilang & gerak lancar",
+   280→        ],
+   281→      },
+   282→      {
+   283→        heading: "Kombinasi Terbaik: Keduanya!",
+   284→        paragraphs: [
+   285→          "Kabar baiknya, Anda tidak harus memilih. Banyak pelanggan kami mengambil paket kombinasi: pijat terapi untuk meluruhkan otot punggung, dilanjutkan refleksi kaki untuk menyeimbangkan organ. Hasilnya? Relaksasi dua lapis yang sulit dilupakan.",
+   286→          "Tanyakan paket kombinasi ini kepada resepsionis kami saat reservasi.",
+   287→        ],
+   288→      },
+   289→    ],
+   290→    conclusion:
+   291→      "Masih bingung memilih? Terapis kami akan membantu menentukan terapi terbaik berdasarkan keluhan Anda — gratis saat konsultasi awal.",
+   292→  },
+   293→  {
+   294→    slug: "mengatasi-nyeri-punggung-pekerja-kantoran",
+   295→    title: "Mengatasi Nyeri Punggung untuk Pekerja Kantoran: 7 Langkah Efektif",
+   296→    excerpt:
+   297→      "Duduk 8 jam sehari membuat punggung Anda protes? Terapkan 7 langkah ini — termasuk teknik pijat terapi yang menargetkan akar masalah nyeri punggung pekerja kantoran.",
+   298→    category: "Tips Kesehatan",
+   299→    date: "2025-02-10",
+   300→    readTime: 7,
+   301→    image: "/images/blog-olahraga.jpg",
+   302→    keywords: ["nyeri punggung pekerja kantoran", "pegal punggung duduk lama", "pijat punggung"],
+   303→    content: [
+   304→      {
+   305→        heading: "Mengapa Punggung Anda Sering Sakit?",
+   306→        paragraphs: [
+   307→          "Tubuh manusia dirancang untuk bergerak, bukan duduk berjam-jam. Saat duduk, tekanan pada cakram tulang belakang meningkat hingga 40% dibanding berdiri. Ditambah postur membungkuk menatap layar, otot punggung atas dan leher bekerja ekstra tanpa henti — inilah resep nyeri punggung kronis.",
+   308→          "Keluhan paling umum pekerja kantoran: kaku di leher-bahu, nyeri di antara tulang belikat, dan pegal menjalar ke pinggang.",
+   309→        ],
+   310→      },
+   311→      {
+   312→        heading: "Langkah 1-3: Perbaiki Kebiasaan Duduk",
+   313→        paragraphs: ["Mulai dari akar masalah — postur dan lingkungan kerja Anda:"],
+   314→        list: [
+   315→          "Atur tinggi layar sejajar mata agar leher tidak menunduk",
+   316→          "Duduk dengan punggung menempel sandaran, kaki menapak penuh",
+   317→          "Aturan 30-30: setiap 30 menit kerja, berdiri dan bergerak 30 detik",
+   318→        ],
+   319→      },
+   320→      {
+   321→        heading: "Langkah 4-5: Gerakan Peregangan Harian",
+   322→        paragraphs: ["Lakukan peregangan sederhana ini di meja kerja: putar bahu ke belakang 10 kali, sentakkan dagu ke belakang (chin tuck) 10 kali, dan tegakkan dada sambil merentangkan lengan 5 kali setiap 2 jam."],
+   323→      },
+   324→      {
+   325→        heading: "Langkah 6: Pijat Terapi Rutin",
+   326→        paragraphs: [
+   327→          "Peregangan saja tidak cukup untuk simpul otot yang sudah terbentuk. Pijat terapi bekerja pada lapisan otot dalam — melepas trigger point di leher, bahu, dan punggung yang menjadi sumber nyeri.",
+   328→          "Di Mutiara Refleksi, pijat terapi 60 menit (Rp 100.000) telah membantu ratusan pekerja kantoran kembali bekerja tanpa nyeri. Terapis kami memahami anatomi pekerja kantoran: area leher-atas-punggung mendapat perhatian khusus.",
+   329→        ],
+   330→      },
+   331→      {
+   332→        heading: "Langkah 7: Jaga Jarak Ideal dengan Refleksi",
+   333→        paragraphs: ["Lengkapi rutinitas dengan refleksi kaki 2 kali sebulan untuk melancarkan sirkulasi — kaki adalah bagian yang paling terabaikan saat duduk seharian, padahal inilah pompa sirkulasi tubuh."],
+   334→      },
+   335→    ],
+   336→    conclusion:
+   337→      "Jangan biarkan punggung Anda menjadi alarm yang terus berbunyi. Book sesi Pijat Terapi Otot kami dan rasakan punggung ringan kembali.",
+   338→  },
+   339→  {
+   340→    slug: "manfaat-pijat-refleksi-untuk-sirkulasi-darah",
+   341→    title: "Manfaat Pijat Refleksi untuk Sirkulasi Darah dan Jantung",
+   342→    excerpt:
+   343→      "Sirkulasi darah yang lancar adalah fondasi kesehatan. Pelajari bagaimana pijat refleksi membantu memperbaiki aliran darah dan mendukung kesehatan jantung Anda.",
+   344→    category: "Manfaat",
+   345→    date: "2025-02-17",
+   346→    readTime: 6,
+   347→    image: "/images/blog-sirkulasi.jpg",
+   348→    keywords: ["pijat refleksi sirkulasi darah", "melancarkan peredaran darah", "kesehatan jantung"],
+   349→    content: [
+   350→      {
+   351→        heading: "Kaki: Pompa Kedua Tubuh Anda",
+   352→        paragraphs: [
+   353→          "Jantung memompa darah ke seluruh tubuh, namun mengembalikan darah dari kaki ke jantung mengandalkan otot tungkai — itulah mengapa kaki disebut 'pompa kedua'. Duduk atau berdiri terlalu lama membuat pompa ini lemah, darah menggenang di kaki, dan muncul keluhan: bengkak, kesemutan, hingga varises.",
+   354→          "Pijat refleksi membantu 'menyalakan' kembali pompa alami ini melalui stimulasi tekanan terarah pada tungkai dan telapak kaki.",
+   355→        ],
+   356→      },
+   357→      {
+   358→        heading: "Apa yang Terjadi pada Pembuluh Darah Saat Direfleksi?",
+   359→        paragraphs: [
+   360→          "Tekanan dan pelepasan berulang pada titik refleksi menciptakan efek pompa mekanis: pembuluh vena dangkal terkompresi lalu terisi kembali, mendorong darah balik ke jantung. Secara bersamaan, kapiler di kulit dan otot melebar sehingga jaringan mendapat oksigen lebih banyak.",
+   361→          "Efek tambahan yang dirasakan: kaki terasa hangat, warna kulit lebih cerah, dan rasa berat di kaki menghilang.",
+   362→        ],
+   363→      },
+   364→      {
+   365→        heading: "Refleksi dan Kesehatan Jantung",
+   366→        paragraphs: ["Relaksasi mendalam selama refleksi menurunkan denyut jantung istirahat dan tekanan darah pada banyak orang. Meski bukan pengganti pengobatan, terapi rutin menjadi pelengkap gaya hidup sehat jantung: bergizi seimbang, olahraga, tidur cukup, dan manajemen stres."],
+   367→      },
+   368→      {
+   369→        heading: "Tanda Sirkulasi Anda Perlu 'Diservis'",
+   370→        paragraphs: ["Waspadai tanda-tanda berikut:"],
+   371→        list: [
+   372→          "Kaki mudah bengkak di sore/malam hari",
+   373→          "Kesemutan sering tanpa penyebab",
+   374→          "Kaki terasa dingin meski cuaca hangat",
+   375→          "Sakit kaki setelah berjalan jarak pendek",
+   376→          "Warna kulit kaki keunguan atau pucat",
+   377→        ],
+   378→      },
+   379→      {
+   380→        heading: "Rutinitas Sirkulasi Sehat",
+   381→        paragraphs: [
+   382→          "Kami merekomendasikan: refleksi 1–2x per minggu untuk pemula dengan keluhan, lalu 1x per minggu atau dua minggu untuk pemeliharaan. Kombinasikan dengan jalan kaki 30 menit harian dan hidrasi cukup untuk hasil optimal.",
+   383→        ],
+   384→      },
+   385→    ],
+   386→    conclusion:
+   387→      "Berikan 'servis rutin' untuk pompa kedua tubuh Anda. Reservasi sesi refleksi sirkulasi di Mutiara Refleksi hari ini.",
+   388→  },
+   389→  {
+   390→    slug: "mengatasi-insomnia-dengan-pijat-refleksi",
+   391→    title: "Mengatasi Insomnia dengan Pijat Refleksi: Metode Alami Tanpa Obat",
+   392→    excerpt:
+   393→      "Sulit tidur setiap malam? Sebelum mengandalkan obat tidur, coba dulu pijat refleksi — metode alami yang membantu tubuh kembali menemukan ritme tidurnya.",
+   394→    category: "Tips Kesehatan",
+   395→    date: "2025-02-24",
+   396→    readTime: 6,
+   397→    image: "/images/blog-insomnia.jpg",
+   398→    keywords: ["mengatasi insomnia", "sulit tidur", "pijat refleksi untuk insomnia"],
+   399→    content: [
+   400→      {
+   401→        heading: "Mengapa Anda Tidak Bisa Tidur?",
+   402→        paragraphs: [
+   403→          "Insomnia jarang berdiri sendiri — ia adalah gejala dari sesuatu yang lain: pikiran yang tak berhenti berputar, kafein yang menumpuk, kebiasaan layar sebelum tidur, hingga ketegangan fisik yang belum terurai. Obat tidur mungkin membantu sementara, tetapi tidak mengatasi akar masalahnya.",
+   404→          "Pijat refleksi mendekati insomnia dari dua arah sekaligus: menenangkan sistem saraf dan melepas ketegangan fisik yang menghalangi tidur.",
+   405→        ],
+   406→      },
+   407→      {
+   408→        heading: "Mekanisme Refleksi untuk Tidur",
+   409→        paragraphs: [
+   410→          "Penekanan pada titik-titik refleksi tertentu merangsang pelepasan melatonin alami dan serotonin, sekaligus mengaktifkan mode parasimpatis — kondisi di mana detak jantung melambat, napas mendalam, dan tubuh bersiap tidur.",
+   411→          "Titik-titik kunci: ujung ibu jari kaki (kepala/otak), titik solar plexus di lengkung kaki (pusat emosi), dan titik ginjal di tengah telapak (keseimbangan energi).",
+   412→        ],
+   413→      },
+   414→      {
+   415→        heading: "Ritual Tidur Mandiri 10 Menit",
+   416→        paragraphs: ["Coba rutinitas ini setiap malam sebelum tidur:"],
+   417→        list: [
+   418→          "Rendam kaki dalam air hangat 5 menit (boleh tambah garam)",
+   419→          "Keringkan, lalu pijat ujung ibu jari kaki memutar 1 menit per kaki",
+   420→          "Tekan titik tengah telapak perlahan 30 detik per kaki",
+   421→          "Usap telapak kaki dari tumit ke jari 10 kali",
+   422→          "Minum air hangat, matikan layar, atur lampu redup",
+   423→        ],
+   424→      },
+   425→      {
+   426→        heading: "Kapan Harus Ke Terapis?",
+   427→        paragraphs: [
+   428→          "Jika insomnia berlangsung lebih dari 2 minggu, pijatan mandiri perlu didukung terapi profesional. Sesi refleksi 90 menit di Mutiara Refleksi dirancang untuk relaksasi maksimal — suasana terapeutik, teknik pernapasan terpandu, dan pijatan menyeluruh hingga kepala.",
+   429→          "Banyak pelanggan kami tertidur sebelum sesi selesai — bukti efektivitasnya. Jadwalkan sesi Anda di sore atau malam hari untuk efek tidur optimal.",
+   430→        ],
+   431→      },
+   432→    ],
+   433→    conclusion:
+   434→      "Tidur nyenyak adalah hak Anda. Biarkan tangan ahli kami membantu tubuh Anda mengingat cara tidur — reservasi malam hari di Mutiara Refleksi.",
+   435→  },
+   436→  {
+   437→    slug: "pijat-refleksi-untuk-pemulihan-olahraga",
+   438→    title: "Pijat Refleksi untuk Pemulihan Olahraga: Rahasia Atlet yang Terlupakan",
+   439→    excerpt:
+   440→      "Latihan keras tanpa pemulihan = kemajuan mandek. Pelajari bagaimana pijat refleksi dan terapi mempercepat recovery otot serta meningkatkan performa latihan Anda.",
+   441→    category: "Tips Kesehatan",
+   442→    date: "2025-03-03",
+   443→    readTime: 6,
+   444→    image: "/images/blog-olahraga.jpg",
+   445→    keywords: ["pemulihan olahraga", "pijat recovery", "pijat refleksi atlet"],
+   446→    content: [
+   447→      {
+   448→        heading: "Pemulihan: Bagian Latihan yang Paling Sering Dilupakan",
+   449→        paragraphs: [
+   450→          "Banyak penggemar olahraga fokus pada latihan dan nutrisi, namun mengabaikan pemulihan. Padahal, otot tidak tumbuh saat berlatih — ia tumbuh saat pulih. DOMS (nyeri otot onset tertunda) yang berhari-hari adalah tanda pemulihan Anda tidak optimal.",
+   451→          "Terapi pijat terbukti mempercepat pemulihan dengan tiga cara: melancarkan aliran darah ke otot yang lelah, mengurangi inflamasi ringan, dan meredakan ketegangan saraf pasca latihan.",
+   452→        ],
+   453→      },
+   454→      {
+   455→        heading: "Refleksi Kaki: Fondasi Recovery yang Terlupakan",
+   456→        paragraphs: [
+   457→          "Setiap langkah lari atau squat menempatkan beban berlipat pada telapak kaki — namun kaki jarang mendapat perawatan. Refleksi kaki melepas ketegangan plantar fasia, melancarkan sirkulasi tungkai, dan membantu kembali keseimbangan tubuh setelah latihan intens.",
+   458→          "Untuk pelari dan pecinta senam, refleksi rutin terbukti mengurangi keluhan nyeri tumit dan kaku kaki pagi hari.",
+   459→        ],
+   460→      },
+   461→      {
+   462→        heading: "Protokol Recovery Mingguan yang Efektif",
+   463→        paragraphs: ["Susun pemulihan Anda seperti susunan latihan:"],
+   464→        list: [
+   465→          "H-0 pasca latihan berat: pendinginan, hidrasi, peregangan ringan",
+   466→          "H+1: pijat terapi ringan untuk melancarkan sirkulasi (bukan deep tissue)",
+   467→          "H+2/3: pijat terapi mendalam untuk simpul otot yang terbentuk",
+   468→          "Setiap minggu: refleksi kaki 60 menit untuk keseimbangan dan kaki sehat",
+   469→        ],
+   470→      },
+   471→      {
+   472→        heading: "Paket Spesial Atlet Akhir Pekan",
+   473→        paragraphs: [
+   474→          "Kami memahami ritme pekerja Jakarta yang berolahraga di akhir pekan. Paket kombo Pijat Terapi + Refleksi kami dirancang untuk memulihkan tubuh Anda dalam satu kunjungan — siap kembali beraktivitas Senin pagi tanpa keluhan.",
+   475→          "Atlet dengan cedera tertentu sebaiknya menunggu fase inflamasi akut berlalu (24–72 jam) sebelum menerima pijatan mendalam.",
+   476→        ],
+   477→      },
+   478→    ],
+   479→    conclusion:
+   480→      "Latih keras, pulih lebih keras. Jadwalkan sesi recovery Anda di Mutiara Refleksi dan rasakan performa latihan yang naik konsisten.",
+   481→  },
+   482→  {
+   483→    slug: "harga-pijat-refleksi-jakarta-timur-panduan",
+   484→    title: "Harga Pijat Refleksi di Jakarta Timur: Panduan Lengkap 2025",
+   485→    excerpt:
+   486→      "Berapa harga pijat refleksi yang wajar di Jakarta Timur? Panduan lengkap kisaran harga, faktor yang memengaruhi biaya, dan cara memilih tempat terbaik sesuai budget.",
+   487→    category: "Panduan",
+   488→    date: "2025-03-10",
+   489→    readTime: 7,
+   490→    image: "/images/blog-harga.jpg",
+   491→    keywords: ["harga pijat refleksi jakarta timur", "biaya refleksi", "refleksi murah jakarta"],
+   492→    content: [
+   493→      {
+   494→        heading: "Kisaran Harga Pijat Refleksi di Jakarta Timur",
+   495→        paragraphs: [
+   496→          "Harga pijat refleksi di Jakarta Timur bervariasi tergantung lokasi, fasilitas, dan keahlian terapis. Secara umum:"],
+   497→        list: [
+   498→          "Refleksi kaki 60 menit: Rp 50.000 – Rp 150.000",
+   499→          "Pijat terapi/deep tissue 60 menit: Rp 80.000 – Rp 250.000",
+   500→          "Pijat kursi 30 menit: Rp 30.000 – Rp 70.000",
+   501→          "Aromaterapi 90 menit: Rp 120.000 – Rp 350.000",
+   502→          "Pijat ibu hamil 60 menit: Rp 100.000 – Rp 250.000",
+   503→        ],
+   504→      },
+   505→      {
+   506→        heading: "Faktor yang Memengaruhi Harga",
+   507→        paragraphs: [
+   508→          "Mengapa ada refleksi Rp 50.000 dan ada Rp 150.000? Beberapa faktor utama: lokasi (mall vs ruko), kualitas dan sertifikasi terapis, kebersihan fasilitas, durasi sebenarnya (perhatikan apakah '60 menit' benar-benar 60 menit terapi), dan kelengkapan perlengkapan higienis.",
+   509→          "Harga terlalu murah di bawah standar sering berarti kompromi di salah satu faktor tersebut.",
+   510→        ],
+   511→      },
+   512→      {
+   513→        heading: "Harga Transparan di Mutiara Refleksi",
+   514→        paragraphs: [
+   515→          "Di Mutiara Refleksi, kami percaya kesehatan berkualitas tidak harus mahal. Harga kami transparan tanpa biaya tersembunyi: refleksi tradisional 60 menit Rp 75.000, pijat terapi Rp 100.000, refleksi wajah Rp 65.000, aromaterapi 90 menit Rp 150.000, pijat ibu hamil Rp 120.000, dan kursi eksekutif 30 menit hanya Rp 45.000.",
+   516→          "Setiap sesi mencakup handuk bersih, konsultasi singkat, dan minuman hangat.",
+   517→        ],
+   518→      },
+   519→      {
+   520→        heading: "Cara Hemat Tanpa Kompromi Kualitas",
+   521→        paragraphs: ["Beberapa strategi cerdas untuk rutinitas refleksi ramah kantong:"],
+   522→        list: [
+   523→          "Paket Hemat Pagi — refleksi Rp 60.000 untuk kunjungan Senin–Kamis pagi",
+   524→          "Membership 10 sesi — hemat Rp 75.000 plus gratis refleksi wajah",
+   525→          "Paket keluarga dan pasangan — hemat hingga 17% untuk kunjungan bersama",
+   526→          "Program korporat — harga khusus bila perusahaan Anda memfasilitasi wellness karyawan",
+   527→        ],
+   528→      },
+   529→      {
+   530→        heading: "Yang Anda Bayar Bukan Sekadar Pijat",
+   531→        paragraphs: [
+   532→          "Saat memilih tempat refleksi, Anda membeli keamanan dan hasil. Terapis kami berpengalaman lebih dari 10 tahun, perlengkapan selalu higienis, dan setiap sesi diawali konsultasi kesehatan. Itulah nilai yang tidak selalu Anda dapat di tempat termurah.",
+   533→        ],
+   534→      },
+   535→    ],
+   536→    conclusion:
+   537→      "Kesehatan adalah investasi terbaik. Lihat halaman Harga kami untuk daftar lengkap dan pilih paket yang sesuai budget Anda.",
+   538→  },
+   539→];
+   540→
+   541→export const getPost = (slug: string) => blogPosts.find((p) => p.slug === slug);
+   542→

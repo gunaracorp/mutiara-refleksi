@@ -1,0 +1,58 @@
+// ============================================================
+// MUTIARA REFLEKSI - Database Schema
+// ============================================================
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+// Reservasi layanan dari halaman /booking
+model Booking {
+  id          String   @id @default(cuid())
+  name        String
+  phone       String
+  email       String?
+  service     String
+  package     String?
+  date        String
+  time        String
+  notes       String?
+  status      String   @default("pending") // pending | confirmed | done | cancelled
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  @@index([date])
+  @@index([status])
+}
+
+// Pesan dari halaman /kontak
+model ContactMessage {
+  id        String   @id @default(cuid())
+  name      String
+  email     String
+  phone     String?
+  subject   String
+  message   String
+  isRead    Boolean  @default(false)
+  createdAt DateTime @default(now())
+
+  @@index([isRead])
+}
+
+// Testimoni yang dikirim pelanggan (butuh approval admin)
+model Testimonial {
+  id        String   @id @default(cuid())
+  name      String
+  service   String
+  rating    Int
+  message   String
+  approved  Boolean  @default(false)
+  createdAt DateTime @default(now())
+
+  @@index([approved])
+}
