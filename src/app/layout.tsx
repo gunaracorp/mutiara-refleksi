@@ -1,86 +1,42 @@
-import type { Metadata, Viewport } from "next";
-import { Playfair_Display, Plus_Jakarta_Sans } from "next/font/google";
+import type { Metadata } from "next";
+import { Geist, Geist_Mono } from "next/font/google";
+import { Analytics } from "@vercel/analytics/next";
 import "./globals.css";
-import { Navbar } from "@/components/shared/navbar";
-import { Footer } from "@/components/shared/footer";
-import { WhatsAppFloat } from "@/components/shared/whatsapp-float";
-import { JsonLd } from "@/components/shared/json-ld";
-import { localBusinessJsonLd, websiteJsonLd } from "@/lib/json-ld";
-import { site } from "@/lib/site";
+import { Toaster } from "@/components/ui/toaster";
 
-const jakarta = Plus_Jakarta_Sans({
+const geistSans = Geist({
+  variable: "--font-geist-sans",
   subsets: ["latin"],
-  variable: "--font-jakarta",
-  display: "swap",
 });
 
-const playfair = Playfair_Display({
+const geistMono = Geist_Mono({
+  variable: "--font-geist-mono",
   subsets: ["latin"],
-  variable: "--font-playfair",
-  display: "swap",
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL(site.url),
-  title: {
-    default: `${site.name} — Pijat Refleksi Profesional di Jakarta Timur`,
-    template: `%s | ${site.name}`,
+  title: "Z.ai Code Scaffold - AI-Powered Development",
+  verification: {
+    google: "Tj268rgljpt5xPiXmRpIR6FC_XSLuDsKAF_5uh1qnH0",
   },
-  description: site.description,
-  keywords: [...site.keywords],
-  authors: [{ name: site.legalName, url: site.url }],
-  creator: site.legalName,
-  publisher: site.legalName,
-  applicationName: site.name,
-  category: "Health & Wellness",
-  alternates: {
-    canonical: "/",
-    languages: { "id-ID": "/" },
+  description: "Modern Next.js scaffold optimized for AI-powered development with Z.ai. Built with TypeScript, Tailwind CSS, and shadcn/ui.",
+  keywords: ["Z.ai", "Next.js", "TypeScript", "Tailwind CSS", "shadcn/ui", "AI development", "React"],
+  authors: [{ name: "Z.ai Team" }],
+  icons: {
+    icon: "https://z-cdn.chatglm.cn/z-ai/static/logo.svg",
   },
   openGraph: {
+    title: "Z.ai Code Scaffold",
+    description: "AI-powered development with modern React stack",
+    url: "https://chat.z.ai",
+    siteName: "Z.ai",
     type: "website",
-    locale: site.locale,
-    url: site.url,
-    siteName: site.name,
-    title: `${site.name} — Pijat Refleksi Profesional di Jakarta Timur`,
-    description: site.description,
-    images: [
-      {
-        url: site.ogImage,
-        width: 1440,
-        height: 720,
-        alt: "Mutiara Refleksi — Pusat Pijat Refleksi Jakarta Timur",
-      },
-    ],
   },
   twitter: {
     card: "summary_large_image",
-    title: `${site.name} — Pijat Refleksi Profesional Jakarta Timur`,
-    description: site.description,
-    images: [site.ogImage],
+    title: "Z.ai Code Scaffold",
+    description: "AI-powered development with modern React stack",
   },
-  robots: {
-    index: true,
-    follow: true,
-    googleBot: {
-      index: true,
-      follow: true,
-      "max-video-preview": -1,
-      "max-image-preview": "large",
-      "max-snippet": -1,
-    },
-  },
-  icons: {
-    icon: [{ url: "/branding/logo-kecil.png", type: "image/png" }],
-    apple: [{ url: "/branding/logo-kecil.png" }],
-  },
-  manifest: "/manifest.webmanifest",
-};
-
-export const viewport: Viewport = {
-  themeColor: "#14532d",
-  width: "device-width",
-  initialScale: 1,
 };
 
 export default function RootLayout({
@@ -89,16 +45,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="id" suppressHydrationWarning>
-      <body className={`${jakarta.variable} ${playfair.variable} font-sans min-h-screen flex flex-col`}>
-        <JsonLd data={localBusinessJsonLd()} />
-        <JsonLd data={websiteJsonLd()} />
-        <Navbar />
-        <main className="flex-1" id="konten-utama">
-          {children}
-        </main>
-        <Footer />
-        <WhatsAppFloat />
+    <html lang="en" suppressHydrationWarning>
+      <body
+        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-background text-foreground`}
+      >
+        {children}
+        <Toaster />
+        <Analytics />
       </body>
     </html>
   );
