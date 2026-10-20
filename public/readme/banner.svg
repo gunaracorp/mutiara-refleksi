@@ -1,0 +1,108 @@
+<svg width="1280" height="420" viewBox="0 0 1280 420" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Mutiara Refleksi — Pusat Pijat Refleksi Profesional Jakarta Timur">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0a3a20"/>
+      <stop offset="0.45" stop-color="#14532d"/>
+      <stop offset="1" stop-color="#082b16"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0.5" cy="0.3" r="0.7">
+      <stop offset="0" stop-color="#2f9e5f" stop-opacity="0.5"/>
+      <stop offset="0.6" stop-color="#2f9e5f" stop-opacity="0.12"/>
+      <stop offset="1" stop-color="#2f9e5f" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="pearl" cx="0.34" cy="0.28" r="1">
+      <stop offset="0" stop-color="#ffffff"/>
+      <stop offset="0.5" stop-color="#f2ede1"/>
+      <stop offset="0.78" stop-color="#d6cdb8"/>
+      <stop offset="1" stop-color="#b0a68e"/>
+    </radialGradient>
+    <radialGradient id="pearlSoft" cx="0.4" cy="0.32" r="1">
+      <stop offset="0" stop-color="#ffffff" stop-opacity="0.95"/>
+      <stop offset="1" stop-color="#cfc6ae" stop-opacity="0.55"/>
+    </radialGradient>
+    <linearGradient id="gold" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#e7c95a"/>
+      <stop offset="0.5" stop-color="#c9a227"/>
+      <stop offset="1" stop-color="#e7c95a"/>
+    </linearGradient>
+    <linearGradient id="leaf" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#3aa76a"/>
+      <stop offset="1" stop-color="#0f3d22"/>
+    </linearGradient>
+    <linearGradient id="crimson" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#ef4444"/>
+      <stop offset="1" stop-color="#b91c1c"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1280" height="420" fill="url(#bg)"/>
+  <rect width="1280" height="420" fill="url(#glow)"/>
+
+  <!-- garis tepi emas -->
+  <rect x="14" y="14" width="1252" height="392" fill="none" stroke="url(#gold)" stroke-width="1.5" opacity="0.55" rx="18"/>
+  <rect x="22" y="22" width="1236" height="376" fill="none" stroke="#e7c95a" stroke-width="0.6" opacity="0.25" rx="14"/>
+
+  <!-- titik-titik refleksi (halo) -->
+  <g fill="#e7c95a" opacity="0.32">
+    <circle cx="470" cy="203" r="4"/>
+    <circle cx="488" cy="163" r="4"/>
+    <circle cx="482" cy="119" r="4"/>
+    <circle cx="497" cy="78"  r="4"/>
+    <circle cx="520" cy="44"  r="4"/>
+    <circle cx="810" cy="203" r="4"/>
+    <circle cx="792" cy="163" r="4"/>
+    <circle cx="798" cy="119" r="4"/>
+    <circle cx="783" cy="78"  r="4"/>
+    <circle cx="760" cy="44"  r="4"/>
+  </g>
+  <!-- gugus titik tekan (kanan bawah & kiri atas) -->
+  <g fill="#e7c95a" opacity="0.2">
+    <circle cx="1092" cy="252" r="5"/><circle cx="1122" cy="232" r="4"/><circle cx="1150" cy="266" r="3.5"/>
+    <circle cx="1112" cy="292" r="3"/><circle cx="1070" cy="222" r="3"/>
+    <circle cx="188" cy="150" r="5"/><circle cx="158" cy="130" r="4"/><circle cx="130" cy="164" r="3.5"/>
+    <circle cx="170" cy="190" r="3"/><circle cx="210" cy="120" r="3"/>
+  </g>
+
+  <!-- mutiara melayang -->
+  <g>
+    <circle cx="150" cy="86" r="26" fill="url(#pearlSoft)" opacity="0.9"/>
+    <circle cx="1146" cy="66" r="18" fill="url(#pearlSoft)" opacity="0.7"/>
+    <circle cx="1206" cy="326" r="30" fill="url(#pearlSoft)" opacity="0.45"/>
+    <circle cx="66"  cy="318" r="14" fill="url(#pearlSoft)" opacity="0.55"/>
+    <circle cx="1035" cy="360" r="9" fill="url(#pearlSoft)" opacity="0.6"/>
+  </g>
+
+  <!-- logo mutiara + daun -->
+  <circle cx="640" cy="132" r="72" fill="#ffffff" opacity="0.08"/>
+  <circle cx="640" cy="132" r="60" fill="url(#pearl)"/>
+  <path d="M640 96 C 606 114, 602 152, 640 172 C 678 152, 674 114, 640 96 Z" fill="url(#leaf)"/>
+  <line x1="640" y1="104" x2="640" y2="166" stroke="#082b16" stroke-width="3" opacity="0.45" stroke-linecap="round"/>
+  <path d="M640 104 C 628 122, 628 144, 640 162" fill="none" stroke="#e7c95a" stroke-width="1.6" opacity="0.75"/>
+  <ellipse cx="620" cy="114" rx="15" ry="8" fill="#ffffff" opacity="0.5" transform="rotate(-24 620 114)"/>
+  <circle cx="640" cy="132" r="68" fill="none" stroke="url(#gold)" stroke-width="2.5"/>
+  <g stroke="url(#gold)" stroke-width="2" opacity="0.85" stroke-linecap="round">
+    <line x1="640" y1="42" x2="640" y2="56"/>
+    <line x1="640" y1="208" x2="640" y2="222"/>
+    <line x1="550" y1="132" x2="564" y2="132"/>
+    <line x1="716" y1="132" x2="730" y2="132"/>
+  </g>
+
+  <!-- judul & tagline -->
+  <text x="640" y="262" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="58" font-weight="bold" fill="#fdfbf7" letter-spacing="7">MUTIARA REFLEKSI</text>
+  <text x="640" y="302" text-anchor="middle" font-family="Verdana, Geneva, sans-serif" font-size="17" fill="url(#gold)" letter-spacing="9">PIJAT REFLEKSI PROFESIONAL · JAKARTA TIMUR</text>
+  <text x="640" y="342" text-anchor="middle" font-family="Georgia, serif" font-style="italic" font-size="23" fill="#e8f5ee" opacity="0.92">“Mengutamakan Kesehatan Anda”</text>
+
+  <!-- strip bawah -->
+  <line x1="430" y1="366" x2="850" y2="366" stroke="url(#gold)" stroke-width="1.4" opacity="0.7"/>
+  <circle cx="430" cy="366" r="3" fill="#e7c95a"/>
+  <circle cx="850" cy="366" r="3" fill="#e7c95a"/>
+  <text x="640" y="392" text-anchor="middle" font-family="Verdana, Geneva, sans-serif" font-size="12.5" fill="#cfe8da" opacity="0.8" letter-spacing="4">EST. 2015 · PT MUTIARA REFLEKSI GROUP · PGC CILILITAN LT. 3A</text>
+
+  <!-- badge reservasi kecil kanan-atas -->
+  <g>
+    <rect x="1024" y="118" width="196" height="42" rx="21" fill="url(#crimson)" opacity="0.95"/>
+    <circle cx="1050" cy="139" r="9" fill="none" stroke="#ffffff" stroke-width="2.2"/>
+    <path d="M1045 141 q 5 6 11 1 q 6 -4 3 -9" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round"/>
+    <text x="1132" y="145" text-anchor="middle" font-family="Verdana, sans-serif" font-size="13.5" font-weight="bold" fill="#ffffff">WA 0851-6267-4977</text>
+  </g>
+</svg>
